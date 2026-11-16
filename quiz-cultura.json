@@ -1,374 +1,336 @@
 {
-  "title": "Cultura General",
-  "description": "Historia, geografía y conocimientos generales",
-  "icon": "🌍",
+  "title": "Cultura general",
+  "description": "Pon a prueba tus conocimientos de cultura general.",
   "questions": [
     {
-      "question": "¿En qué año llegó Cristóbal Colón a América?",
-      "options": [
-        "1492",
-        "1500",
-        "1488",
-        "1512"
+      "question": "¿Cuál es la capital de Francia?",
+      "answers": [
+        "París",
+        "Roma",
+        "Lisboa",
+        "Berlín"
       ],
       "correct": 0,
-      "hint": "Fue a finales del siglo XV.",
-      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=300&fit=crop"
+      "hint": "Está a orillas del río Sena."
     },
     {
-      "question": "¿Cuál es el río más largo del mundo?",
-      "options": [
-        "Amazonas",
-        "Nilo",
-        "Yangtsé",
-        "Misisipi"
-      ],
-      "correct": 1,
-      "hint": "Se encuentra en África."
-    },
-    {
-      "question": "¿Quién pintó la Mona Lisa?",
-      "options": [
-        "Miguel Ángel",
-        "Rafael",
-        "Leonardo da Vinci",
-        "Donatello"
-      ],
-      "correct": 2,
-      "hint": "También diseñó máquinas voladoras.",
-      "image": "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=600&h=300&fit=crop"
-    },
-    {
-      "question": "¿Cuál es la capital de Australia?",
-      "options": [
-        "Sídney",
-        "Melbourne",
-        "Canberra",
-        "Brisbane"
-      ],
-      "correct": 2,
-      "hint": "No es la ciudad más grande."
-    },
-    {
-      "question": "¿En qué año comenzó la Segunda Guerra Mundial?",
-      "options": [
-        "1939",
-        "1941",
-        "1936",
-        "1945"
-      ],
-      "correct": 0,
-      "hint": "Alemania invadió Polonia."
-    },
-    {
-      "question": "¿Cuántos continentes hay en el mundo?",
-      "options": [
+      "question": "¿Cuántos lados tiene un hexágono?",
+      "answers": [
         "5",
         "6",
         "7",
         "8"
       ],
-      "correct": 2,
-      "hint": "Incluye la Antártida."
-    },
-    {
-      "question": "¿Quién escribió 'Don Quijote de la Mancha'?",
-      "options": [
-        "Lope de Vega",
-        "Miguel de Cervantes",
-        "García Márquez",
-        "Quevedo"
-      ],
       "correct": 1,
-      "hint": "Es considerado el padre de la novela moderna."
+      "hint": "Es el doble de los lados de un triángulo."
     },
     {
-      "question": "¿Cuál es el océano más grande del mundo?",
-      "options": [
+      "question": "¿En qué continente está Egipto?",
+      "answers": [
+        "Asia",
+        "Europa",
+        "África",
+        "Oceanía"
+      ],
+      "correct": 2,
+      "hint": "Está en el noreste de ese continente."
+    },
+    {
+      "question": "¿Cuál es el océano más grande?",
+      "answers": [
         "Atlántico",
         "Índico",
         "Ártico",
         "Pacífico"
       ],
       "correct": 3,
-      "hint": "Cubre más de un tercio de la superficie terrestre.",
-      "image": "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=600&h=300&fit=crop"
+      "hint": "Se encuentra entre Asia y América."
     },
     {
-      "question": "¿En qué país se encuentra la Torre Eiffel?",
-      "options": [
-        "Italia",
-        "España",
-        "Francia",
-        "Alemania"
-      ],
-      "correct": 2,
-      "hint": "Es el símbolo de París."
-    },
-    {
-      "question": "¿Cuántos huesos tiene el cuerpo humano adulto aproximadamente?",
-      "options": [
-        "186",
-        "206",
-        "226",
-        "256"
+      "question": "¿Quién pintó la Mona Lisa?",
+      "answers": [
+        "Vincent van Gogh",
+        "Leonardo da Vinci",
+        "Pablo Picasso",
+        "Claude Monet"
       ],
       "correct": 1,
-      "hint": "Los bebés nacen con más."
+      "hint": "Fue un artista del Renacimiento italiano."
     },
     {
-      "question": "¿Quién fue el primer emperador de Roma?",
-      "options": [
-        "Julio César",
-        "Augusto",
-        "Nerón",
-        "Trajano"
+      "question": "¿Cuántos días tiene un año bisiesto?",
+      "answers": [
+        "365",
+        "366",
+        "364",
+        "367"
       ],
       "correct": 1,
-      "hint": "Su nombre original era Octavio."
+      "hint": "Tiene un día más que un año normal."
     },
     {
-      "question": "¿Cuál es el país más grande del mundo por superficie?",
-      "options": [
-        "China",
-        "Estados Unidos",
-        "Canadá",
-        "Rusia"
-      ],
-      "correct": 3,
-      "hint": "Ocupa parte de Europa y Asia."
-    },
-    {
-      "question": "¿En qué año cayó el Muro de Berlín?",
-      "options": [
-        "1987",
-        "1989",
-        "1991",
-        "1985"
-      ],
-      "correct": 1,
-      "hint": "Simbolizó el fin de la Guerra Fría."
-    },
-    {
-      "question": "¿Cuál es la montaña más alta del mundo?",
-      "options": [
-        "K2",
-        "Kangchenjunga",
-        "Everest",
-        "Lhotse"
-      ],
-      "correct": 2,
-      "hint": "Está en la cordillera del Himalaya.",
-      "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&h=300&fit=crop"
-    },
-    {
-      "question": "¿Quién descubrió la penicilina?",
-      "options": [
-        "Louis Pasteur",
-        "Alexander Fleming",
-        "Marie Curie",
-        "Robert Koch"
-      ],
-      "correct": 1,
-      "hint": "Fue un descubrimiento accidental en 1928."
-    },
-    {
-      "question": "¿Cuál es la moneda oficial de Japón?",
-      "options": [
+      "question": "¿Cuál es la moneda de Japón?",
+      "answers": [
         "Yuan",
         "Won",
         "Yen",
-        "Ringgit"
+        "Dólar"
       ],
       "correct": 2,
-      "hint": "Se abrevia como JPY."
+      "hint": "Su nombre empieza por Y."
     },
     {
-      "question": "¿En qué continente se encuentra Egipto?",
-      "options": [
-        "Asia",
-        "África",
-        "Europa",
-        "Oceanía"
-      ],
-      "correct": 1,
-      "hint": "Aunque tiene territorio en Asia (Sinaí)."
-    },
-    {
-      "question": "¿Quién escribió 'Cien años de soledad'?",
-      "options": [
-        "Mario Vargas Llosa",
-        "Gabriel García Márquez",
-        "Julio Cortázar",
-        "Pablo Neruda"
-      ],
-      "correct": 1,
-      "hint": "Autor colombiano, premio Nobel."
-    },
-    {
-      "question": "¿Cuál es el planeta más grande del sistema solar?",
-      "options": [
-        "Saturno",
-        "Júpiter",
-        "Urano",
-        "Neptuno"
-      ],
-      "correct": 1,
-      "hint": "Tiene una Gran Mancha Roja."
-    },
-    {
-      "question": "¿En qué año se firmó la Declaración de Independencia de Estados Unidos?",
-      "options": [
-        "1776",
-        "1789",
-        "1812",
-        "1765"
-      ],
-      "correct": 0,
-      "hint": "El 4 de julio."
-    },
-    {
-      "question": "¿Cuál es la capital de Canadá?",
-      "options": [
-        "Toronto",
-        "Vancouver",
-        "Ottawa",
-        "Montreal"
+      "question": "¿En qué país están las pirámides de Guiza?",
+      "answers": [
+        "México",
+        "Grecia",
+        "Egipto",
+        "India"
       ],
       "correct": 2,
-      "hint": "No es la ciudad más poblada."
+      "hint": "Es un país del norte de África."
     },
     {
-      "question": "¿Quién fue el último faraón de Egipto?",
-      "options": [
-        "Ramsés II",
-        "Tutankamón",
-        "Cleopatra",
-        "Akhenatón"
+      "question": "¿Qué idioma se habla principalmente en Brasil?",
+      "answers": [
+        "Español",
+        "Portugués",
+        "Francés",
+        "Italiano"
       ],
-      "correct": 2,
-      "hint": "Fue una reina de la dinastía ptolemaica."
+      "correct": 1,
+      "hint": "Es el idioma de Portugal."
     },
     {
-      "question": "¿Cuántos lados tiene un hexágono?",
-      "options": [
+      "question": "¿Cuántos colores tiene el arcoíris tradicionalmente?",
+      "answers": [
         "5",
         "6",
         "7",
         "8"
       ],
-      "correct": 1,
-      "hint": "El prefijo 'hexa' significa seis."
+      "correct": 2,
+      "hint": "Empieza por rojo y termina en violeta."
     },
     {
-      "question": "¿En qué país se originaron los Juegos Olímpicos?",
-      "options": [
+      "question": "¿Cuál es el animal terrestre más rápido?",
+      "answers": [
+        "León",
+        "Guepardo",
+        "Caballo",
+        "Antílope"
+      ],
+      "correct": 1,
+      "hint": "Puede superar los 100 km/h en carreras cortas."
+    },
+    {
+      "question": "¿En qué ciudad está la Sagrada Familia?",
+      "answers": [
+        "Madrid",
+        "Sevilla",
+        "Barcelona",
+        "Valencia"
+      ],
+      "correct": 2,
+      "hint": "Es la capital de Cataluña."
+    },
+    {
+      "question": "¿Qué instrumento tiene teclas blancas y negras?",
+      "answers": [
+        "Guitarra",
+        "Violín",
+        "Piano",
+        "Flauta"
+      ],
+      "correct": 2,
+      "hint": "Se toca con las dos manos."
+    },
+    {
+      "question": "¿Cuántos minutos tiene una hora?",
+      "answers": [
+        "50",
+        "60",
+        "70",
+        "100"
+      ],
+      "correct": 1,
+      "hint": "Una hora tiene seis grupos de diez minutos."
+    },
+    {
+      "question": "¿Cuál es el país con forma de bota?",
+      "answers": [
         "Italia",
-        "Grecia",
-        "Egipto",
-        "China"
+        "Chile",
+        "Noruega",
+        "Japón"
       ],
-      "correct": 1,
-      "hint": "En la antigua Olimpia."
+      "correct": 0,
+      "hint": "Está en el sur de Europa."
     },
     {
-      "question": "¿Cuál es el idioma más hablado del mundo como lengua nativa?",
-      "options": [
-        "Inglés",
-        "Español",
-        "Mandarín",
-        "Hindi"
+      "question": "¿Qué deporte se juega en Wimbledon?",
+      "answers": [
+        "Fútbol",
+        "Tenis",
+        "Baloncesto",
+        "Rugby"
+      ],
+      "correct": 1,
+      "hint": "Se juega con raqueta y pelota."
+    },
+    {
+      "question": "¿Cuál es el planeta conocido como planeta rojo?",
+      "answers": [
+        "Venus",
+        "Júpiter",
+        "Marte",
+        "Mercurio"
       ],
       "correct": 2,
-      "hint": "Se habla principalmente en China."
+      "hint": "Su color se debe al óxido de hierro."
     },
     {
-      "question": "¿Quién inventó la bombilla eléctrica?",
-      "options": [
-        "Nikola Tesla",
-        "Thomas Edison",
-        "Alexander Graham Bell",
-        "Benjamin Franklin"
+      "question": "¿Qué animal es conocido como el rey de la selva?",
+      "answers": [
+        "Tigre",
+        "Elefante",
+        "León",
+        "Gorila"
+      ],
+      "correct": 2,
+      "hint": "Es un gran felino con melena."
+    },
+    {
+      "question": "¿En qué estación caen normalmente las hojas?",
+      "answers": [
+        "Primavera",
+        "Verano",
+        "Otoño",
+        "Invierno"
+      ],
+      "correct": 2,
+      "hint": "Viene después del verano."
+    },
+    {
+      "question": "¿Cuál es el símbolo químico del oro?",
+      "answers": [
+        "Ag",
+        "Au",
+        "Fe",
+        "O"
       ],
       "correct": 1,
-      "hint": "Aunque hubo otros inventores concurrentes."
+      "hint": "Procede del nombre latino aurum."
     },
     {
-      "question": "¿Cuál es el desierto más grande del mundo?",
-      "options": [
-        "Sahara",
-        "Gobi",
+      "question": "¿Cuántas patas tiene una araña?",
+      "answers": [
+        "6",
+        "8",
+        "10",
+        "12"
+      ],
+      "correct": 1,
+      "hint": "Tiene cuatro pares."
+    },
+    {
+      "question": "¿Qué país tiene como capital Lisboa?",
+      "answers": [
+        "España",
+        "Brasil",
+        "Portugal",
+        "Argentina"
+      ],
+      "correct": 2,
+      "hint": "Está al oeste de España."
+    },
+    {
+      "question": "¿Cuál es el continente más frío?",
+      "answers": [
+        "Europa",
         "Antártida",
-        "Arabia"
+        "Asia",
+        "América"
       ],
-      "correct": 2,
-      "hint": "Es un desierto polar."
+      "correct": 1,
+      "hint": "Está alrededor del Polo Sur."
     },
     {
-      "question": "¿En qué año terminó la Primera Guerra Mundial?",
-      "options": [
-        "1914",
-        "1916",
-        "1918",
-        "1920"
+      "question": "¿Qué se celebra el 1 de enero?",
+      "answers": [
+        "Año Nuevo",
+        "Día del Trabajo",
+        "Navidad",
+        "Día del Libro"
       ],
-      "correct": 2,
-      "hint": "El 11 de noviembre."
+      "correct": 0,
+      "hint": "Es el primer día del calendario."
     },
     {
-      "question": "¿Cuál es la capital de Brasil?",
-      "options": [
-        "Río de Janeiro",
-        "São Paulo",
-        "Brasilia",
-        "Salvador"
+      "question": "¿Cuál es el material principal del vidrio común?",
+      "answers": [
+        "Madera",
+        "Arena",
+        "Hierro",
+        "Papel"
       ],
-      "correct": 2,
-      "hint": "Fue construida en el interior del país."
+      "correct": 1,
+      "hint": "Se obtiene principalmente de sílice."
     },
     {
-      "question": "¿Quién compuso la Novena Sinfonía?",
-      "options": [
-        "Mozart",
-        "Bach",
-        "Beethoven",
-        "Chopin"
-      ],
-      "correct": 2,
-      "hint": "Incluye el Himno de la Alegría."
-    },
-    {
-      "question": "¿Cuántos jugadores hay en un equipo de fútbol en el campo?",
-      "options": [
+      "question": "¿Cuántos jugadores tiene un equipo de fútbol en el campo?",
+      "answers": [
         "9",
         "10",
         "11",
         "12"
       ],
       "correct": 2,
-      "hint": "Incluye al portero."
+      "hint": "El portero cuenta dentro de ese número."
     },
     {
-      "question": "¿Cuál es el metal más abundante en la corteza terrestre?",
-      "options": [
-        "Hierro",
-        "Aluminio",
-        "Cobre",
-        "Oro"
+      "question": "¿Qué país es famoso por los tulipanes?",
+      "answers": [
+        "Países Bajos",
+        "Canadá",
+        "Marruecos",
+        "India"
       ],
-      "correct": 1,
-      "hint": "Se usa mucho en la industria aeroespacial."
+      "correct": 0,
+      "hint": "También es conocido por sus molinos."
     },
     {
-      "question": "¿En qué ciudad se encuentra el Coliseo?",
-      "options": [
-        "Atenas",
-        "Roma",
-        "Estambul",
-        "Nápoles"
+      "question": "¿Cuál es el satélite natural de la Tierra?",
+      "answers": [
+        "Fobos",
+        "La Luna",
+        "Europa",
+        "Titán"
       ],
       "correct": 1,
-      "hint": "Es un anfiteatro romano."
+      "hint": "Lo vemos cambiar de fases."
+    },
+    {
+      "question": "¿Qué animal produce la miel?",
+      "answers": [
+        "Avispa",
+        "Mariposa",
+        "Abeja",
+        "Hormiga"
+      ],
+      "correct": 2,
+      "hint": "Vive en colmenas."
+    },
+    {
+      "question": "¿Cuántas semanas tiene aproximadamente un año?",
+      "answers": [
+        "42",
+        "48",
+        "52",
+        "60"
+      ],
+      "correct": 2,
+      "hint": "Son doce meses y unos pocos días."
     }
   ]
 }

@@ -1,398 +1,226 @@
-// ==================== CONFIGURACIÓN ====================
-const QUESTIONS_PER_QUIZ = 10;
+// Nombres de los archivos que contienen las preguntas.
 const QUIZ_FILES = [
-  { id: 'cultura', file: 'data/quiz-cultura.json' },
-  { id: 'ciencia', file: 'data/quiz-ciencia.json' },
-  { id: 'cine', file: 'data/quiz-cine.json' }
+  { id: "cultura", file: "quiz-cultura.json" },
+  { id: "ciencia", file: "quiz-ciencia.json" },
+  { id: "cine", file: "quiz-cine.json" }
 ];
 
-// ==================== ESTADO ====================
-let quizzes = {};          // id -> datos del quiz
-let currentQuizId = null;
-let currentQuestions = []; // preguntas seleccionadas y mezcladas
-let currentIndex = 0;
+const quizList = document.getElementById("quiz-list");
+const screens = document.querySelectorAll(".screen");
+
+let quizzes = [];
+let currentQuestions = [];
+let currentQuestionIndex = 0;
 let score = 0;
-let selectedOption = null;
+let selectedAnswer = null;
 let answered = false;
-let hintsRemaining = 1;
-let hintUsedThisQuestion = false;
+let currentQuizTitle = "";
 
-// ==================== ELEMENTOS DOM ====================
-const screens = {
-  home: document.getElementById('home-screen'),
-  ranking: document.getElementById('ranking-screen'),
-  quiz: document.getElementById('quiz-screen'),
-  results: document.getElementById('results-screen')
-};
-
-const elements = {
-  quizGrid: document.getElementById('quiz-grid'),
-  rankingList: document.getElementById('ranking-list'),
-  questionCounter: document.getElementById('question-counter'),
-  scoreDisplay: document.getElementById('score-display'),
-  progressFill: document.getElementById('progress-fill'),
-  questionText: document.getElementById('question-text'),
-  optionsContainer: document.getElementById('options-container'),
-  questionImageContainer: document.getElementById('question-image-container'),
-  hintBox: document.getElementById('hint-box'),
-  hintText: document.getElementById('hint-text'),
-  btnHint: document.getElementById('btn-hint'),
-  btnConfirm: document.getElementById('btn-confirm'),
-  resultsEmoji: document.getElementById('results-emoji'),
-  resultsTitle: document.getElementById('results-title'),
-  resultsScore: document.getElementById('results-score'),
-  resultsPercentage: document.getElementById('results-percentage'),
-  resultsMessage: document.getElementById('results-message'),
-  playerName: document.getElementById('player-name'),
-  btnSaveScore: document.getElementById('btn-save-score'),
-  saveFeedback: document.getElementById('save-feedback')
-};
-
-// ==================== UTILIDADES ====================
-function shuffleArray(array) {
-  const arr = [...array];
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
+// Cambia de pantalla.
+function showScreen(screenId) {
+  screens.forEach(screen => screen.classList.remove("active"));
+  document.getElementById(screenId).classList.add("active");
 }
 
-function showScreen(name) {
-  Object.values(screens).forEach(s => s.classList.remove('active'));
-  screens[name].classList.add('active');
-}
-
-function getRanking() {
-  try {
-    return JSON.parse(localStorage.getItem('quizMasterRanking') || '[]');
-  } catch {
-    return [];
-  }
-}
-
-function saveRanking(entry) {
-  const ranking = getRanking();
-  ranking.push(entry);
-  ranking.sort((a, b) => b.score - a.score || new Date(b.date) - new Date(a.date));
-  // Mantener solo los 20 mejores
-  const top = ranking.slice(0, 20);
-  localStorage.setItem('quizMasterRanking', JSON.stringify(top));
-}
-
-// ==================== CARGA DE QUIZZES ====================
+// Carga los tres archivos JSON.
 async function loadQuizzes() {
-  const promises = QUIZ_FILES.map(async ({ id, file }) => {
-    try {
-      const res = await fetch(file);
-      if (!res.ok) throw new Error(`Error cargando ${file}`);
-      const data = await res.json();
-      quizzes[id] = { ...data, id };
-    } catch (err) {
-      console.error(err);
-    }
-  });
-  await Promise.all(promises);
-  renderHome();
-}
+  quizList.innerHTML = "<p>Cargando cuestionarios...</p>";
 
-function renderHome() {
-  elements.quizGrid.innerHTML = '';
-  Object.values(quizzes).forEach(quiz => {
-    const card = document.createElement('div');
-    card.className = 'quiz-card';
-    card.innerHTML = `
-      <div class="icon">${quiz.icon || '❓'}</div>
-      <div class="info">
-        <h3>${quiz.title}</h3>
-        <p>${quiz.description}</p>
-        <div class="meta">${quiz.questions.length} preguntas disponibles · ${QUESTIONS_PER_QUIZ} por partida</div>
-      </div>
-    `;
-    card.addEventListener('click', () => startQuiz(quiz.id));
-    elements.quizGrid.appendChild(card);
-  });
-}
-
-// ==================== QUIZ ====================
-function startQuiz(quizId) {
-  currentQuizId = quizId;
-  const quiz = quizzes[quizId];
-  if (!quiz) return;
-
-  // Seleccionar N preguntas aleatorias
-  const shuffled = shuffleArray(quiz.questions);
-  currentQuestions = shuffled.slice(0, Math.min(QUESTIONS_PER_QUIZ, shuffled.length));
-
-  // Mezclar opciones de cada pregunta (manteniendo el índice correcto)
-  currentQuestions = currentQuestions.map(q => {
-    const options = [...q.options];
-    const correctAnswer = options[q.correct];
-    const shuffledOpts = shuffleArray(options);
-    const newCorrect = shuffledOpts.indexOf(correctAnswer);
-    return {
-      ...q,
-      options: shuffledOpts,
-      correct: newCorrect
-    };
-  });
-
-  currentIndex = 0;
-  score = 0;
-  hintsRemaining = 1;
-  selectedOption = null;
-  answered = false;
-  hintUsedThisQuestion = false;
-
-  showScreen('quiz');
-  renderQuestion();
-}
-
-function renderQuestion() {
-  const q = currentQuestions[currentIndex];
-  if (!q) return;
-
-  // Contador y progreso
-  elements.questionCounter.textContent = `Pregunta ${currentIndex + 1} / ${currentQuestions.length}`;
-  elements.scoreDisplay.textContent = `Puntos: ${score}`;
-  const progress = ((currentIndex) / currentQuestions.length) * 100;
-  elements.progressFill.style.width = `${progress}%`;
-
-  // Pregunta
-  elements.questionText.textContent = q.question;
-
-  // Imagen (opcional)
-  if (q.image) {
-    elements.questionImageContainer.innerHTML = `<img src="${q.image}" alt="Imagen de la pregunta" loading="lazy">`;
-    elements.questionImageContainer.classList.remove('hidden');
-  } else {
-    elements.questionImageContainer.classList.add('hidden');
-    elements.questionImageContainer.innerHTML = '';
-  }
-
-  // Opciones
-  elements.optionsContainer.innerHTML = '';
-  const letters = ['A', 'B', 'C', 'D', 'E', 'F'];
-  q.options.forEach((opt, idx) => {
-    const btn = document.createElement('button');
-    btn.className = 'option';
-    btn.dataset.index = idx;
-    btn.innerHTML = `
-      <span class="letter">${letters[idx] || (idx + 1)}</span>
-      <span class="text">${opt}</span>
-    `;
-    btn.addEventListener('click', () => selectOption(idx));
-    elements.optionsContainer.appendChild(btn);
-  });
-
-  // Pista
-  elements.hintBox.classList.add('hidden');
-  hintUsedThisQuestion = false;
-  elements.btnHint.disabled = hintsRemaining <= 0 || !q.hint;
-  elements.btnHint.textContent = `💡 Pista (${hintsRemaining} disponible${hintsRemaining !== 1 ? 's' : ''})`;
-
-  // Botón confirmar
-  selectedOption = null;
-  answered = false;
-  elements.btnConfirm.disabled = true;
-  elements.btnConfirm.textContent = 'Confirmar respuesta';
-  elements.btnConfirm.onclick = confirmAnswer;
-}
-
-function selectOption(index) {
-  if (answered) return;
-  selectedOption = index;
-
-  // Actualizar UI
-  const options = elements.optionsContainer.querySelectorAll('.option');
-  options.forEach((opt, i) => {
-    opt.classList.toggle('selected', i === index);
-  });
-
-  elements.btnConfirm.disabled = false;
-}
-
-function confirmAnswer() {
-  if (selectedOption === null || answered) return;
-  answered = true;
-
-  const q = currentQuestions[currentIndex];
-  const options = elements.optionsContainer.querySelectorAll('.option');
-  const isCorrect = selectedOption === q.correct;
-
-  // Marcar respuestas
-  options.forEach((opt, i) => {
-    opt.classList.add('disabled');
-    if (i === q.correct) {
-      opt.classList.add('correct');
-    } else if (i === selectedOption && !isCorrect) {
-      opt.classList.add('incorrect');
-    }
-  });
-
-  if (isCorrect) {
-    score++;
-    elements.scoreDisplay.textContent = `Puntos: ${score}`;
-  }
-
-  // Cambiar botón a "Siguiente"
-  if (currentIndex < currentQuestions.length - 1) {
-    elements.btnConfirm.textContent = 'Siguiente pregunta →';
-    elements.btnConfirm.onclick = nextQuestion;
-  } else {
-    elements.btnConfirm.textContent = 'Ver resultados →';
-    elements.btnConfirm.onclick = showResults;
-  }
-  elements.btnConfirm.disabled = false;
-
-  // Desactivar pista
-  elements.btnHint.disabled = true;
-}
-
-function nextQuestion() {
-  currentIndex++;
-  renderQuestion();
-}
-
-function showHint() {
-  if (hintsRemaining <= 0 || hintUsedThisQuestion || answered) return;
-  const q = currentQuestions[currentIndex];
-  if (!q.hint) return;
-
-  hintsRemaining--;
-  hintUsedThisQuestion = true;
-  elements.hintText.textContent = q.hint;
-  elements.hintBox.classList.remove('hidden');
-  elements.btnHint.disabled = true;
-  elements.btnHint.textContent = `💡 Pista (${hintsRemaining} disponible${hintsRemaining !== 1 ? 's' : ''})`;
-}
-
-function showResults() {
-  // Completar barra de progreso
-  elements.progressFill.style.width = '100%';
-
-  const total = currentQuestions.length;
-  const percentage = Math.round((score / total) * 100);
-
-  let emoji, title, message;
-  if (percentage >= 90) {
-    emoji = '🏆';
-    title = '¡Excelente!';
-    message = 'Eres un verdadero maestro del conocimiento.';
-  } else if (percentage >= 70) {
-    emoji = '🎉';
-    title = '¡Muy bien!';
-    message = 'Gran puntuación. ¡Sigue así!';
-  } else if (percentage >= 50) {
-    emoji = '👍';
-    title = '¡Buen intento!';
-    message = 'No está mal, pero puedes mejorar.';
-  } else {
-    emoji = '💪';
-    title = '¡Sigue practicando!';
-    message = 'La próxima vez lo harás mejor.';
-  }
-
-  elements.resultsEmoji.textContent = emoji;
-  elements.resultsTitle.textContent = title;
-  elements.resultsScore.innerHTML = `Has acertado <strong>${score}</strong> de <strong>${total}</strong>`;
-  elements.resultsPercentage.textContent = `${percentage}%`;
-  elements.resultsMessage.textContent = message;
-
-  // Reset save
-  elements.playerName.value = '';
-  elements.saveFeedback.classList.add('hidden');
-  elements.btnSaveScore.disabled = false;
-
-  showScreen('results');
-}
-
-// ==================== RANKING ====================
-function renderRanking() {
-  const ranking = getRanking();
-  elements.rankingList.innerHTML = '';
-
-  if (ranking.length === 0) {
-    elements.rankingList.innerHTML = `
-      <div class="empty-ranking">
-        <p>Aún no hay puntuaciones guardadas.</p>
-        <p>¡Sé el primero en aparecer aquí!</p>
-      </div>
-    `;
-    return;
-  }
-
-  ranking.forEach((entry, i) => {
-    const item = document.createElement('div');
-    item.className = 'ranking-item';
-    let rankClass = '';
-    if (i === 0) rankClass = 'gold';
-    else if (i === 1) rankClass = 'silver';
-    else if (i === 2) rankClass = 'bronze';
-
-    const date = new Date(entry.date).toLocaleDateString('es-ES', {
-      day: 'numeric', month: 'short', year: 'numeric'
+  try {
+    const requests = QUIZ_FILES.map(async quizFile => {
+      const response = await fetch("./" + quizFile.file);
+      if (!response.ok) {
+        throw new Error("No se encuentra " + quizFile.file);
+      }
+      return await response.json();
     });
 
-    item.innerHTML = `
-      <div class="rank ${rankClass}">${i + 1}</div>
-      <div class="name">
-        ${entry.name}
-        <div class="quiz-name">${entry.quizTitle} · ${date}</div>
-      </div>
-      <div class="score">${entry.score}/${entry.total}</div>
-    `;
-    elements.rankingList.appendChild(item);
+    quizzes = await Promise.all(requests);
+    renderHome();
+  } catch (error) {
+    console.error("No se pudieron cargar los cuestionarios:", error);
+    quizList.innerHTML = "<p class='feedback'>No se pudieron cargar los quizzes. Comprueba que los tres JSON están en la misma carpeta que index.html y abre la página con Live Server.</p>";
+  }
+}
+
+// Crea un botón para cada categoría.
+function renderHome() {
+  quizList.innerHTML = "";
+
+  quizzes.forEach((quiz, index) => {
+    const button = document.createElement("button");
+    button.className = "quiz-card";
+    button.innerHTML = `<strong>${quiz.title}</strong><span>${quiz.questions.length} preguntas disponibles</span>`;
+    button.addEventListener("click", () => startQuiz(index));
+    quizList.appendChild(button);
   });
 }
 
-function handleSaveScore() {
-  const name = elements.playerName.value.trim();
+// Mezcla una lista al azar (algoritmo Fisher-Yates).
+function shuffle(array) {
+  const copy = [...array];
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy;
+}
+
+// Empieza una partida con 10 preguntas aleatorias.
+function startQuiz(quizIndex) {
+  const quiz = quizzes[quizIndex];
+  currentQuizTitle = quiz.title;
+  currentQuestions = shuffle(quiz.questions).slice(0, 10);
+  currentQuestionIndex = 0;
+  score = 0;
+  document.getElementById("quiz-category").textContent = currentQuizTitle;
+  showScreen("quiz-screen");
+  showQuestion();
+}
+
+// Muestra la pregunta y sus posibles respuestas.
+function showQuestion() {
+  const question = currentQuestions[currentQuestionIndex];
+  selectedAnswer = null;
+  answered = false;
+
+  document.getElementById("question-count").textContent =
+    `Pregunta ${currentQuestionIndex + 1} de ${currentQuestions.length}`;
+  document.getElementById("score").textContent = `Puntos: ${score}`;
+  document.getElementById("question-text").textContent = question.question;
+  document.getElementById("progress-bar").style.width =
+    `${(currentQuestionIndex / currentQuestions.length) * 100}%`;
+  document.getElementById("feedback").textContent = "";
+  document.getElementById("hint-button").disabled = false;
+
+  const answersBox = document.getElementById("answers");
+  answersBox.innerHTML = "";
+
+  question.answers.forEach((answer, index) => {
+    const button = document.createElement("button");
+    button.className = "answer";
+    button.textContent = answer;
+    button.addEventListener("click", () => selectAnswer(index));
+    answersBox.appendChild(button);
+  });
+
+  const confirmButton = document.getElementById("confirm-button");
+  confirmButton.textContent = "Confirmar respuesta";
+  confirmButton.disabled = true;
+}
+
+// Guarda la opción que el jugador ha seleccionado.
+function selectAnswer(index) {
+  if (answered) return;
+  selectedAnswer = index;
+
+  document.querySelectorAll(".answer").forEach((button, buttonIndex) => {
+    button.classList.toggle("selected", buttonIndex === index);
+  });
+  document.getElementById("confirm-button").disabled = false;
+}
+
+// Comprueba la respuesta. Después, el botón sirve para avanzar.
+function confirmAnswer() {
+  if (!answered) {
+    if (selectedAnswer === null) return;
+
+    const question = currentQuestions[currentQuestionIndex];
+    const answerButtons = document.querySelectorAll(".answer");
+
+    answered = true;
+    answerButtons.forEach((button, index) => {
+      if (index === question.correct) button.classList.add("correct");
+      if (index === selectedAnswer && index !== question.correct) {
+        button.classList.add("wrong");
+      }
+    });
+
+    if (selectedAnswer === question.correct) {
+      score++;
+      document.getElementById("feedback").textContent = "¡Correcto! +1 punto";
+    } else {
+      document.getElementById("feedback").textContent =
+        "No es correcto. La respuesta verde es la buena.";
+    }
+
+    document.getElementById("score").textContent = `Puntos: ${score}`;
+    document.getElementById("confirm-button").textContent = "Siguiente pregunta";
+    document.getElementById("hint-button").disabled = true;
+  } else {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < currentQuestions.length) {
+      showQuestion();
+    } else {
+      showResults();
+    }
+  }
+}
+
+// Muestra la pantalla final.
+function showResults() {
+  document.getElementById("progress-bar").style.width = "100%";
+  document.getElementById("final-score").textContent =
+    `Has conseguido ${score} de ${currentQuestions.length} puntos.`;
+  document.getElementById("player-name").value = "";
+  document.getElementById("save-message").textContent = "";
+  showScreen("results-screen");
+}
+
+// Guarda nombre y puntuación en el navegador.
+function saveScore() {
+  const nameInput = document.getElementById("player-name");
+  const name = nameInput.value.trim();
+
   if (!name) {
-    elements.playerName.focus();
+    document.getElementById("save-message").textContent = "Escribe tu nombre antes de guardar.";
     return;
   }
 
-  const quiz = quizzes[currentQuizId];
-  saveRanking({
-    name,
-    score,
-    total: currentQuestions.length,
-    quizId: currentQuizId,
-    quizTitle: quiz ? quiz.title : 'Quiz',
-    date: new Date().toISOString()
-  });
+  const ranking = JSON.parse(localStorage.getItem("quizRanking") || "[]");
+  ranking.push({ name, score, quiz: currentQuizTitle });
+  ranking.sort((a, b) => b.score - a.score);
+  localStorage.setItem("quizRanking", JSON.stringify(ranking.slice(0, 10)));
 
-  elements.saveFeedback.textContent = '¡Puntuación guardada!';
-  elements.saveFeedback.classList.remove('hidden');
-  elements.btnSaveScore.disabled = true;
+  document.getElementById("save-message").textContent = "¡Puntuación guardada!";
 }
 
-// ==================== EVENTOS ====================
-document.getElementById('btn-ranking').addEventListener('click', () => {
+// Enseña una pista sin revelar la respuesta.
+function showHint() {
+  const question = currentQuestions[currentQuestionIndex];
+  document.getElementById("feedback").textContent =
+    question.hint || "Piensa con calma antes de responder.";
+  document.getElementById("hint-button").disabled = true;
+}
+
+// Muestra las mejores puntuaciones guardadas.
+function renderRanking() {
+  const ranking = JSON.parse(localStorage.getItem("quizRanking") || "[]");
+  const list = document.getElementById("ranking-list");
+  list.innerHTML = "";
+
+  if (ranking.length === 0) {
+    list.innerHTML = "<li>Aún no hay puntuaciones. ¡Juega una partida!</li>";
+    return;
+  }
+
+  ranking.forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = `${item.name} — ${item.score}/10 (${item.quiz})`;
+    list.appendChild(li);
+  });
+}
+
+// Eventos de los botones.
+document.getElementById("confirm-button").addEventListener("click", confirmAnswer);
+document.getElementById("hint-button").addEventListener("click", showHint);
+document.getElementById("ranking-button").addEventListener("click", () => {
   renderRanking();
-  showScreen('ranking');
+  showScreen("ranking-screen");
 });
+document.getElementById("back-button").addEventListener("click", () => showScreen("home-screen"));
+document.getElementById("menu-button").addEventListener("click", () => showScreen("home-screen"));
+document.getElementById("save-score-button").addEventListener("click", saveScore);
 
-document.getElementById('btn-back-from-ranking').addEventListener('click', () => {
-  showScreen('home');
-});
-
-document.getElementById('btn-hint').addEventListener('click', showHint);
-
-document.getElementById('btn-home').addEventListener('click', () => {
-  showScreen('home');
-});
-
-document.getElementById('btn-retry').addEventListener('click', () => {
-  if (currentQuizId) startQuiz(currentQuizId);
-});
-
-document.getElementById('btn-save-score').addEventListener('click', handleSaveScore);
-
-elements.playerName.addEventListener('keypress', (e) => {
-  if (e.key === 'Enter') handleSaveScore();
-});
-
-// ==================== INICIO ====================
+// Carga los cuestionarios al abrir la página.
 loadQuizzes();

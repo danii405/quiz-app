@@ -3,98 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz Master - Demuestra lo que sabes</title>
+  <title>Quiz Master</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <div id="app">
-    <!-- Pantalla de inicio / menú principal -->
+  <main class="container">
+    <header>
+      <h1>🎯 Quiz Master</h1>
+      <p>¡Pon a prueba tus conocimientos!</p>
+    </header>
+
     <section id="home-screen" class="screen active">
-      <header class="hero">
-        <h1>🧠 Quiz Master</h1>
-        <p class="subtitle">Elige un quiz y pon a prueba tus conocimientos</p>
-      </header>
-
-      <div class="quiz-grid" id="quiz-grid">
-        <!-- Se rellena dinámicamente -->
+      <h2>Elige tu quiz</h2>
+      <p class="intro">Selecciona una categoría. Cada partida tiene 10 preguntas aleatorias.</p>
+      <div id="quiz-list" class="quiz-list">
+        <p>Cargando cuestionarios...</p>
       </div>
-
-      <div class="home-actions">
-        <button id="btn-ranking" class="btn btn-secondary">
-          🏆 Ver Ranking
-        </button>
-      </div>
+      <button id="ranking-button" class="secondary">Ver ranking</button>
     </section>
 
-    <!-- Pantalla de ranking -->
-    <section id="ranking-screen" class="screen">
-      <header>
-        <h2>🏆 Ranking Global</h2>
-        <p>Mejores puntuaciones guardadas</p>
-      </header>
-      <div id="ranking-list" class="ranking-list">
-        <!-- Se rellena dinámicamente -->
-      </div>
-      <button id="btn-back-from-ranking" class="btn btn-primary">Volver al menú</button>
-    </section>
-
-    <!-- Pantalla de quiz -->
     <section id="quiz-screen" class="screen">
-      <div class="quiz-header">
-        <div class="progress-info">
-          <span id="question-counter">Pregunta 1 / 10</span>
-          <span id="score-display">Puntos: 0</span>
-        </div>
-        <div class="progress-bar">
-          <div id="progress-fill" class="progress-fill"></div>
-        </div>
+      <div class="quiz-top">
+        <span id="quiz-category"></span>
+        <span id="question-count"></span>
+        <span id="score">Puntos: 0</span>
       </div>
-
-      <div class="question-container">
-        <div id="question-image-container" class="question-image hidden"></div>
-        <h2 id="question-text"></h2>
-        <div id="options-container" class="options-container"></div>
-        <div id="hint-box" class="hint-box hidden">
-          <span class="hint-icon">💡</span>
-          <span id="hint-text"></span>
-        </div>
-      </div>
-
+      <div class="progress"><div id="progress-bar"></div></div>
+      <h2 id="question-text"></h2>
+      <div id="answers" class="answers"></div>
+      <p id="feedback" class="feedback" aria-live="polite"></p>
       <div class="quiz-actions">
-        <button id="btn-hint" class="btn btn-hint" disabled>💡 Pista (1 disponible)</button>
-        <button id="btn-confirm" class="btn btn-primary" disabled>Confirmar respuesta</button>
+        <button id="hint-button" class="secondary">💡 Ver pista</button>
+        <button id="confirm-button" disabled>Confirmar respuesta</button>
       </div>
     </section>
 
-    <!-- Pantalla de resultados -->
     <section id="results-screen" class="screen">
-      <div class="results-card">
-        <div id="results-emoji" class="results-emoji">🎉</div>
-        <h2 id="results-title">¡Quiz completado!</h2>
-        <p id="results-score" class="results-score">Has acertado <strong>0</strong> de <strong>10</strong></p>
-        <p id="results-percentage" class="results-percentage">0%</p>
-        <p id="results-message"></p>
-
-        <div class="save-score">
-          <label for="player-name">Guarda tu puntuación:</label>
-          <div class="name-input-group">
-            <input type="text" id="player-name" placeholder="Tu nombre" maxlength="20">
-            <button id="btn-save-score" class="btn btn-primary">Guardar</button>
-          </div>
-          <p id="save-feedback" class="save-feedback hidden"></p>
-        </div>
-
-        <div class="results-actions">
-          <button id="btn-retry" class="btn btn-secondary">Repetir quiz</button>
-          <button id="btn-home" class="btn btn-primary">Menú principal</button>
-        </div>
-      </div>
+      <h2>¡Quiz terminado!</h2>
+      <p id="final-score" class="final-score"></p>
+      <label for="player-name">Tu nombre para el ranking:</label>
+      <input id="player-name" type="text" maxlength="20" placeholder="Escribe tu nombre">
+      <button id="save-score-button">Guardar puntuación</button>
+      <button id="menu-button" class="secondary">Volver al menú</button>
+      <p id="save-message" class="feedback"></p>
     </section>
-  </div>
 
-  <script src="script.js"></script>
+    <section id="ranking-screen" class="screen">
+      <h2>🏆 Ranking</h2>
+      <ol id="ranking-list" class="ranking-list"></ol>
+      <button id="back-button" class="secondary">Volver</button>
+    </section>
+    <footer>Quiz Master · Proyecto de clase</footer>
+  </main>
 </body>
 </html>
