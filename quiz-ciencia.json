@@ -1,0 +1,205 @@
+{
+  "title": "Ciencia y Tecnología",
+  "description": "Física, biología, química e inventos",
+  "icon": "🔬",
+  "questions": [
+    {
+      "question": "¿Cuál es el planeta más cercano al Sol?",
+      "options": ["Venus", "Mercurio", "Marte", "Tierra"],
+      "correct": 1,
+      "hint": "Es el más pequeño también."
+    },
+    {
+      "question": "¿Qué gas es esencial para la respiración humana?",
+      "options": ["Nitrógeno", "Dióxido de carbono", "Oxígeno", "Hidrógeno"],
+      "correct": 2,
+      "hint": "Representa aproximadamente el 21% de la atmósfera."
+    },
+    {
+      "question": "¿Quién formuló la teoría de la relatividad?",
+      "options": ["Isaac Newton", "Albert Einstein", "Stephen Hawking", "Niels Bohr"],
+      "correct": 1,
+      "hint": "E=mc² es su ecuación más famosa."
+    },
+    {
+      "question": "¿Cuál es la unidad de medida de la resistencia eléctrica?",
+      "options": ["Voltio", "Amperio", "Ohmio", "Vatio"],
+      "correct": 2,
+      "hint": "Se representa con la letra griega omega (Ω)."
+    },
+    {
+      "question": "¿Cuántos cromosomas tiene el ser humano normalmente?",
+      "options": ["23", "46", "48", "44"],
+      "correct": 1,
+      "hint": "23 pares."
+    },
+    {
+      "question": "¿Qué inventó Tim Berners-Lee en 1989?",
+      "options": ["El email", "La World Wide Web", "El teléfono móvil", "El GPS"],
+      "correct": 1,
+      "hint": "Es la base de internet como lo conocemos."
+    },
+    {
+      "question": "¿Cuál es el elemento químico más abundante en el universo?",
+      "options": ["Oxígeno", "Carbono", "Hidrógeno", "Helio"],
+      "correct": 2,
+      "hint": "Es el más ligero."
+    },
+    {
+      "question": "¿Qué partícula subatómica tiene carga negativa?",
+      "options": ["Protón", "Neutrón", "Electrón", "Quark"],
+      "correct": 2,
+      "hint": "Orbita alrededor del núcleo."
+    },
+    {
+      "question": "¿Cuál es la velocidad de la luz en el vacío aproximadamente?",
+      "options": ["300.000 km/s", "150.000 km/s", "1.000.000 km/s", "30.000 km/s"],
+      "correct": 0,
+      "hint": "Es una constante fundamental de la física."
+    },
+    {
+      "question": "¿Qué proceso usan las plantas para obtener energía?",
+      "options": ["Respiración", "Fotosíntesis", "Fermentación", "Digestión"],
+      "correct": 1,
+      "hint": "Requiere luz solar, agua y CO₂."
+    },
+    {
+      "question": "¿Quién descubrió la ley de la gravitación universal?",
+      "options": ["Galileo Galilei", "Isaac Newton", "Johannes Kepler", "Copérnico"],
+      "correct": 1,
+      "hint": "Se dice que se inspiró en una manzana."
+    },
+    {
+      "question": "¿Cuál es el hueso más largo del cuerpo humano?",
+      "options": ["Tibia", "Húmero", "Fémur", "Radio"],
+      "correct": 2,
+      "hint": "Está en el muslo."
+    },
+    {
+      "question": "¿Qué significa ADN?",
+      "options": ["Ácido Desoxirribonucleico", "Ácido Desoxirribonitrico", "Ácido Dirribonucleico", "Ácido Deoxirribonucleico"],
+      "correct": 0,
+      "hint": "Contiene la información genética."
+    },
+    {
+      "question": "¿Cuál es el satélite natural de la Tierra?",
+      "options": ["Marte", "La Luna", "Titán", "Europa"],
+      "correct": 1,
+      "hint": "Controla las mareas."
+    },
+    {
+      "question": "¿Qué científico propuso el modelo heliocéntrico?",
+      "options": ["Ptolomeo", "Copérnico", "Aristóteles", "Galileo"],
+      "correct": 1,
+      "hint": "El Sol en el centro del sistema solar."
+    },
+    {
+      "question": "¿Cuál es la temperatura de ebullición del agua a nivel del mar?",
+      "options": ["90°C", "100°C", "110°C", "80°C"],
+      "correct": 1,
+      "hint": "En la escala Celsius."
+    },
+    {
+      "question": "¿Qué inventó Alexander Graham Bell?",
+      "options": ["La televisión", "El teléfono", "La radio", "El fonógrafo"],
+      "correct": 1,
+      "hint": "Permitió la comunicación a distancia por voz."
+    },
+    {
+      "question": "¿Cuál es el órgano más grande del cuerpo humano?",
+      "options": ["Hígado", "Cerebro", "Piel", "Intestino"],
+      "correct": 2,
+      "hint": "Cubre toda la superficie externa."
+    },
+    {
+      "question": "¿Qué tipo de energía produce una central nuclear?",
+      "options": ["Eólica", "Hidráulica", "Nuclear", "Solar"],
+      "correct": 2,
+      "hint": "Se basa en la fisión de átomos."
+    },
+    {
+      "question": "¿Cuántos planetas hay en el sistema solar?",
+      "options": ["7", "8", "9", "10"],
+      "correct": 1,
+      "hint": "Plutón fue reclasificado."
+    },
+    {
+      "question": "¿Qué gas causa principalmente el efecto invernadero?",
+      "options": ["Oxígeno", "Nitrógeno", "Dióxido de carbono", "Argón"],
+      "correct": 2,
+      "hint": "Aumenta por la quema de combustibles fósiles."
+    },
+    {
+      "question": "¿Quién desarrolló la primera vacuna?",
+      "options": ["Louis Pasteur", "Edward Jenner", "Jonas Salk", "Robert Koch"],
+      "correct": 1,
+      "hint": "Fue contra la viruela."
+    },
+    {
+      "question": "¿Cuál es la fórmula química del agua?",
+      "options": ["CO₂", "H₂O", "O₂", "NaCl"],
+      "correct": 1,
+      "hint": "Dos átomos de hidrógeno y uno de oxígeno."
+    },
+    {
+      "question": "¿Qué partícula del átomo determina el elemento químico?",
+      "options": ["Electrón", "Neutrón", "Protón", "Positrón"],
+      "correct": 2,
+      "hint": "El número atómico."
+    },
+    {
+      "question": "¿Cuál es la fuerza que mantiene a los planetas en órbita?",
+      "options": ["Magnetismo", "Gravedad", "Fuerza nuclear", "Electricidad"],
+      "correct": 1,
+      "hint": "Atracción entre masas."
+    },
+    {
+      "question": "¿Qué animal tiene tres corazones?",
+      "options": ["Pulpo", "Tiburón", "Ballena", "Delfín"],
+      "correct": 0,
+      "hint": "Es un cefalópodo."
+    },
+    {
+      "question": "¿Quién inventó el primer avión controlable?",
+      "options": ["Santos Dumont", "Hermanos Wright", "Leonardo da Vinci", "Amelia Earhart"],
+      "correct": 1,
+      "hint": "En 1903 en Kitty Hawk."
+    },
+    {
+      "question": "¿Cuál es el metal líquido a temperatura ambiente?",
+      "options": ["Plomo", "Mercurio", "Sodio", "Galio"],
+      "correct": 1,
+      "hint": "Se usaba en termómetros antiguos."
+    },
+    {
+      "question": "¿Qué es un agujero negro?",
+      "options": ["Una estrella muerta", "Una región del espacio con gravedad extrema", "Un planeta oscuro", "Una nube de gas"],
+      "correct": 1,
+      "hint": "Ni siquiera la luz puede escapar de él."
+    },
+    {
+      "question": "¿Cuál es la unidad básica de la vida?",
+      "options": ["Átomo", "Molécula", "Célula", "Tejido"],
+      "correct": 2,
+      "hint": "Todos los seres vivos están formados por ellas."
+    },
+    {
+      "question": "¿Qué científico descubrió la radiactividad?",
+      "options": ["Marie Curie", "Henri Becquerel", "Ernest Rutherford", "Ambos A y B"],
+      "correct": 3,
+      "hint": "Becquerel la descubrió, Curie la estudió en profundidad."
+    },
+    {
+      "question": "¿Cuál es el pH del agua pura?",
+      "options": ["5", "6", "7", "8"],
+      "correct": 2,
+      "hint": "Es neutral."
+    },
+    {
+      "question": "¿Qué tipo de onda es la luz?",
+      "options": ["Sonora", "Electromagnética", "Mecánica", "Sísmica"],
+      "correct": 1,
+      "hint": "No necesita medio para propagarse."
+    }
+  ]
+}

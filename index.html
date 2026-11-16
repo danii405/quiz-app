@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Master - Demuestra lo que sabes</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="app">
+    <!-- Pantalla de inicio / menú principal -->
+    <section id="home-screen" class="screen active">
+      <header class="hero">
+        <h1>🧠 Quiz Master</h1>
+        <p class="subtitle">Elige un quiz y pon a prueba tus conocimientos</p>
+      </header>
+
+      <div class="quiz-grid" id="quiz-grid">
+        <!-- Se rellena dinámicamente -->
+      </div>
+
+      <div class="home-actions">
+        <button id="btn-ranking" class="btn btn-secondary">
+          🏆 Ver Ranking
+        </button>
+      </div>
+    </section>
+
+    <!-- Pantalla de ranking -->
+    <section id="ranking-screen" class="screen">
+      <header>
+        <h2>🏆 Ranking Global</h2>
+        <p>Mejores puntuaciones guardadas</p>
+      </header>
+      <div id="ranking-list" class="ranking-list">
+        <!-- Se rellena dinámicamente -->
+      </div>
+      <button id="btn-back-from-ranking" class="btn btn-primary">Volver al menú</button>
+    </section>
+
+    <!-- Pantalla de quiz -->
+    <section id="quiz-screen" class="screen">
+      <div class="quiz-header">
+        <div class="progress-info">
+          <span id="question-counter">Pregunta 1 / 10</span>
+          <span id="score-display">Puntos: 0</span>
+        </div>
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+      </div>
+
+      <div class="question-container">
+        <div id="question-image-container" class="question-image hidden"></div>
+        <h2 id="question-text"></h2>
+        <div id="options-container" class="options-container"></div>
+        <div id="hint-box" class="hint-box hidden">
+          <span class="hint-icon">💡</span>
+          <span id="hint-text"></span>
+        </div>
+      </div>
+
+      <div class="quiz-actions">
+        <button id="btn-hint" class="btn btn-hint" disabled>💡 Pista (1 disponible)</button>
+        <button id="btn-confirm" class="btn btn-primary" disabled>Confirmar respuesta</button>
+      </div>
+    </section>
+
+    <!-- Pantalla de resultados -->
+    <section id="results-screen" class="screen">
+      <div class="results-card">
+        <div id="results-emoji" class="results-emoji">🎉</div>
+        <h2 id="results-title">¡Quiz completado!</h2>
+        <p id="results-score" class="results-score">Has acertado <strong>0</strong> de <strong>10</strong></p>
+        <p id="results-percentage" class="results-percentage">0%</p>
+        <p id="results-message"></p>
+
+        <div class="save-score">
+          <label for="player-name">Guarda tu puntuación:</label>
+          <div class="name-input-group">
+            <input type="text" id="player-name" placeholder="Tu nombre" maxlength="20">
+            <button id="btn-save-score" class="btn btn-primary">Guardar</button>
+          </div>
+          <p id="save-feedback" class="save-feedback hidden"></p>
+        </div>
+
+        <div class="results-actions">
+          <button id="btn-retry" class="btn btn-secondary">Repetir quiz</button>
+          <button id="btn-home" class="btn btn-primary">Menú principal</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

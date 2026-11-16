@@ -1,0 +1,374 @@
+{
+  "title": "Cultura General",
+  "description": "Historia, geografía y conocimientos generales",
+  "icon": "🌍",
+  "questions": [
+    {
+      "question": "¿En qué año llegó Cristóbal Colón a América?",
+      "options": [
+        "1492",
+        "1500",
+        "1488",
+        "1512"
+      ],
+      "correct": 0,
+      "hint": "Fue a finales del siglo XV.",
+      "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=300&fit=crop"
+    },
+    {
+      "question": "¿Cuál es el río más largo del mundo?",
+      "options": [
+        "Amazonas",
+        "Nilo",
+        "Yangtsé",
+        "Misisipi"
+      ],
+      "correct": 1,
+      "hint": "Se encuentra en África."
+    },
+    {
+      "question": "¿Quién pintó la Mona Lisa?",
+      "options": [
+        "Miguel Ángel",
+        "Rafael",
+        "Leonardo da Vinci",
+        "Donatello"
+      ],
+      "correct": 2,
+      "hint": "También diseñó máquinas voladoras.",
+      "image": "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=600&h=300&fit=crop"
+    },
+    {
+      "question": "¿Cuál es la capital de Australia?",
+      "options": [
+        "Sídney",
+        "Melbourne",
+        "Canberra",
+        "Brisbane"
+      ],
+      "correct": 2,
+      "hint": "No es la ciudad más grande."
+    },
+    {
+      "question": "¿En qué año comenzó la Segunda Guerra Mundial?",
+      "options": [
+        "1939",
+        "1941",
+        "1936",
+        "1945"
+      ],
+      "correct": 0,
+      "hint": "Alemania invadió Polonia."
+    },
+    {
+      "question": "¿Cuántos continentes hay en el mundo?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correct": 2,
+      "hint": "Incluye la Antártida."
+    },
+    {
+      "question": "¿Quién escribió 'Don Quijote de la Mancha'?",
+      "options": [
+        "Lope de Vega",
+        "Miguel de Cervantes",
+        "García Márquez",
+        "Quevedo"
+      ],
+      "correct": 1,
+      "hint": "Es considerado el padre de la novela moderna."
+    },
+    {
+      "question": "¿Cuál es el océano más grande del mundo?",
+      "options": [
+        "Atlántico",
+        "Índico",
+        "Ártico",
+        "Pacífico"
+      ],
+      "correct": 3,
+      "hint": "Cubre más de un tercio de la superficie terrestre.",
+      "image": "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=600&h=300&fit=crop"
+    },
+    {
+      "question": "¿En qué país se encuentra la Torre Eiffel?",
+      "options": [
+        "Italia",
+        "España",
+        "Francia",
+        "Alemania"
+      ],
+      "correct": 2,
+      "hint": "Es el símbolo de París."
+    },
+    {
+      "question": "¿Cuántos huesos tiene el cuerpo humano adulto aproximadamente?",
+      "options": [
+        "186",
+        "206",
+        "226",
+        "256"
+      ],
+      "correct": 1,
+      "hint": "Los bebés nacen con más."
+    },
+    {
+      "question": "¿Quién fue el primer emperador de Roma?",
+      "options": [
+        "Julio César",
+        "Augusto",
+        "Nerón",
+        "Trajano"
+      ],
+      "correct": 1,
+      "hint": "Su nombre original era Octavio."
+    },
+    {
+      "question": "¿Cuál es el país más grande del mundo por superficie?",
+      "options": [
+        "China",
+        "Estados Unidos",
+        "Canadá",
+        "Rusia"
+      ],
+      "correct": 3,
+      "hint": "Ocupa parte de Europa y Asia."
+    },
+    {
+      "question": "¿En qué año cayó el Muro de Berlín?",
+      "options": [
+        "1987",
+        "1989",
+        "1991",
+        "1985"
+      ],
+      "correct": 1,
+      "hint": "Simbolizó el fin de la Guerra Fría."
+    },
+    {
+      "question": "¿Cuál es la montaña más alta del mundo?",
+      "options": [
+        "K2",
+        "Kangchenjunga",
+        "Everest",
+        "Lhotse"
+      ],
+      "correct": 2,
+      "hint": "Está en la cordillera del Himalaya.",
+      "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&h=300&fit=crop"
+    },
+    {
+      "question": "¿Quién descubrió la penicilina?",
+      "options": [
+        "Louis Pasteur",
+        "Alexander Fleming",
+        "Marie Curie",
+        "Robert Koch"
+      ],
+      "correct": 1,
+      "hint": "Fue un descubrimiento accidental en 1928."
+    },
+    {
+      "question": "¿Cuál es la moneda oficial de Japón?",
+      "options": [
+        "Yuan",
+        "Won",
+        "Yen",
+        "Ringgit"
+      ],
+      "correct": 2,
+      "hint": "Se abrevia como JPY."
+    },
+    {
+      "question": "¿En qué continente se encuentra Egipto?",
+      "options": [
+        "Asia",
+        "África",
+        "Europa",
+        "Oceanía"
+      ],
+      "correct": 1,
+      "hint": "Aunque tiene territorio en Asia (Sinaí)."
+    },
+    {
+      "question": "¿Quién escribió 'Cien años de soledad'?",
+      "options": [
+        "Mario Vargas Llosa",
+        "Gabriel García Márquez",
+        "Julio Cortázar",
+        "Pablo Neruda"
+      ],
+      "correct": 1,
+      "hint": "Autor colombiano, premio Nobel."
+    },
+    {
+      "question": "¿Cuál es el planeta más grande del sistema solar?",
+      "options": [
+        "Saturno",
+        "Júpiter",
+        "Urano",
+        "Neptuno"
+      ],
+      "correct": 1,
+      "hint": "Tiene una Gran Mancha Roja."
+    },
+    {
+      "question": "¿En qué año se firmó la Declaración de Independencia de Estados Unidos?",
+      "options": [
+        "1776",
+        "1789",
+        "1812",
+        "1765"
+      ],
+      "correct": 0,
+      "hint": "El 4 de julio."
+    },
+    {
+      "question": "¿Cuál es la capital de Canadá?",
+      "options": [
+        "Toronto",
+        "Vancouver",
+        "Ottawa",
+        "Montreal"
+      ],
+      "correct": 2,
+      "hint": "No es la ciudad más poblada."
+    },
+    {
+      "question": "¿Quién fue el último faraón de Egipto?",
+      "options": [
+        "Ramsés II",
+        "Tutankamón",
+        "Cleopatra",
+        "Akhenatón"
+      ],
+      "correct": 2,
+      "hint": "Fue una reina de la dinastía ptolemaica."
+    },
+    {
+      "question": "¿Cuántos lados tiene un hexágono?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correct": 1,
+      "hint": "El prefijo 'hexa' significa seis."
+    },
+    {
+      "question": "¿En qué país se originaron los Juegos Olímpicos?",
+      "options": [
+        "Italia",
+        "Grecia",
+        "Egipto",
+        "China"
+      ],
+      "correct": 1,
+      "hint": "En la antigua Olimpia."
+    },
+    {
+      "question": "¿Cuál es el idioma más hablado del mundo como lengua nativa?",
+      "options": [
+        "Inglés",
+        "Español",
+        "Mandarín",
+        "Hindi"
+      ],
+      "correct": 2,
+      "hint": "Se habla principalmente en China."
+    },
+    {
+      "question": "¿Quién inventó la bombilla eléctrica?",
+      "options": [
+        "Nikola Tesla",
+        "Thomas Edison",
+        "Alexander Graham Bell",
+        "Benjamin Franklin"
+      ],
+      "correct": 1,
+      "hint": "Aunque hubo otros inventores concurrentes."
+    },
+    {
+      "question": "¿Cuál es el desierto más grande del mundo?",
+      "options": [
+        "Sahara",
+        "Gobi",
+        "Antártida",
+        "Arabia"
+      ],
+      "correct": 2,
+      "hint": "Es un desierto polar."
+    },
+    {
+      "question": "¿En qué año terminó la Primera Guerra Mundial?",
+      "options": [
+        "1914",
+        "1916",
+        "1918",
+        "1920"
+      ],
+      "correct": 2,
+      "hint": "El 11 de noviembre."
+    },
+    {
+      "question": "¿Cuál es la capital de Brasil?",
+      "options": [
+        "Río de Janeiro",
+        "São Paulo",
+        "Brasilia",
+        "Salvador"
+      ],
+      "correct": 2,
+      "hint": "Fue construida en el interior del país."
+    },
+    {
+      "question": "¿Quién compuso la Novena Sinfonía?",
+      "options": [
+        "Mozart",
+        "Bach",
+        "Beethoven",
+        "Chopin"
+      ],
+      "correct": 2,
+      "hint": "Incluye el Himno de la Alegría."
+    },
+    {
+      "question": "¿Cuántos jugadores hay en un equipo de fútbol en el campo?",
+      "options": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "correct": 2,
+      "hint": "Incluye al portero."
+    },
+    {
+      "question": "¿Cuál es el metal más abundante en la corteza terrestre?",
+      "options": [
+        "Hierro",
+        "Aluminio",
+        "Cobre",
+        "Oro"
+      ],
+      "correct": 1,
+      "hint": "Se usa mucho en la industria aeroespacial."
+    },
+    {
+      "question": "¿En qué ciudad se encuentra el Coliseo?",
+      "options": [
+        "Atenas",
+        "Roma",
+        "Estambul",
+        "Nápoles"
+      ],
+      "correct": 1,
+      "hint": "Es un anfiteatro romano."
+    }
+  ]
+}

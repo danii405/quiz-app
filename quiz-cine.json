@@ -1,0 +1,205 @@
+{
+  "title": "Cine y Entretenimiento",
+  "description": "Películas, series, música y cultura pop",
+  "icon": "🎬",
+  "questions": [
+    {
+      "question": "¿Quién dirigió la película 'Titanic' (1997)?",
+      "options": ["Steven Spielberg", "James Cameron", "Christopher Nolan", "Ridley Scott"],
+      "correct": 1,
+      "hint": "También dirigió Avatar."
+    },
+    {
+      "question": "¿En qué película aparece el personaje de Forrest Gump?",
+      "options": ["El club de la pelea", "Forrest Gump", "Pulp Fiction", "Matrix"],
+      "correct": 1,
+      "hint": "Protagonizada por Tom Hanks."
+    },
+    {
+      "question": "¿Cuál es el nombre del mago en 'Harry Potter'?",
+      "options": ["Harry Potter", "Hermione Granger", "Ron Weasley", "Albus Dumbledore"],
+      "correct": 0,
+      "hint": "Es el protagonista de la saga."
+    },
+    {
+      "question": "¿Qué película ganó el Oscar a Mejor Película en 2020 (por 2019)?",
+      "options": ["1917", "Joker", "Parásitos", "Érase una vez en Hollywood"],
+      "correct": 2,
+      "hint": "Fue la primera película de habla no inglesa en ganar."
+    },
+    {
+      "question": "¿Quién interpreta a Iron Man en el Universo Cinematográfico de Marvel?",
+      "options": ["Chris Evans", "Robert Downey Jr.", "Chris Hemsworth", "Mark Ruffalo"],
+      "correct": 1,
+      "hint": "Tony Stark."
+    },
+    {
+      "question": "¿En qué año se estrenó la primera película de Star Wars?",
+      "options": ["1975", "1977", "1980", "1983"],
+      "correct": 1,
+      "hint": "Una nueva esperanza."
+    },
+    {
+      "question": "¿Quién compuso la banda sonora de 'El Señor de los Anillos'?",
+      "options": ["John Williams", "Hans Zimmer", "Howard Shore", "Ennio Morricone"],
+      "correct": 2,
+      "hint": "Canadiense."
+    },
+    {
+      "question": "¿Cuál es el nombre del parque de atracciones en 'Jurassic Park'?",
+      "options": ["Dinosaur World", "Jurassic Park", "Isla Nublar Park", "Cretaceous Park"],
+      "correct": 1,
+      "hint": "Creado por John Hammond."
+    },
+    {
+      "question": "¿Quién dirigió 'El Padrino'?",
+      "options": ["Martin Scorsese", "Francis Ford Coppola", "Brian De Palma", "Sergio Leone"],
+      "correct": 1,
+      "hint": "Basada en la novela de Mario Puzo."
+    },
+    {
+      "question": "¿En qué serie aparece el personaje de Walter White?",
+      "options": ["The Sopranos", "Breaking Bad", "The Wire", "Mad Men"],
+      "correct": 1,
+      "hint": "Profesor de química convertido en fabricante de metanfetamina."
+    },
+    {
+      "question": "¿Cuál es la película más taquillera de la historia (sin ajustar por inflación)?",
+      "options": ["Avatar", "Avengers: Endgame", "Titanic", "Star Wars: El despertar de la Fuerza"],
+      "correct": 0,
+      "hint": "Dirigida por James Cameron, reestrenada en 3D."
+    },
+    {
+      "question": "¿Quién interpreta a Jack Sparrow?",
+      "options": ["Orlando Bloom", "Johnny Depp", "Geoffrey Rush", "Javier Bardem"],
+      "correct": 1,
+      "hint": "Piratas del Caribe."
+    },
+    {
+      "question": "¿En qué película canta el personaje 'Let It Go'?",
+      "options": ["Moana", "Frozen", "Tangled", "Brave"],
+      "correct": 1,
+      "hint": "Película de Disney sobre dos hermanas."
+    },
+    {
+      "question": "¿Quién es el director de 'Inception'?",
+      "options": ["Denis Villeneuve", "Christopher Nolan", "David Fincher", "Quentin Tarantino"],
+      "correct": 1,
+      "hint": "También dirigió The Dark Knight."
+    },
+    {
+      "question": "¿Cuál es el nombre del androide en 'Blade Runner'?",
+      "options": ["Replicante", "Cylon", "Terminator", "Mech"],
+      "correct": 0,
+      "hint": "Basado en la novela de Philip K. Dick."
+    },
+    {
+      "question": "¿En qué año se estrenó 'Matrix'?",
+      "options": ["1997", "1999", "2001", "2003"],
+      "correct": 1,
+      "hint": "Hermanos Wachowski."
+    },
+    {
+      "question": "¿Quién interpreta a Hermione Granger en las películas de Harry Potter?",
+      "options": ["Emma Watson", "Emma Stone", "Keira Knightley", "Natalie Portman"],
+      "correct": 0,
+      "hint": "Actriz británica."
+    },
+    {
+      "question": "¿Cuál es la saga de películas sobre un anillo poderoso?",
+      "options": ["Harry Potter", "El Señor de los Anillos", "Las Crónicas de Narnia", "Star Wars"],
+      "correct": 1,
+      "hint": "Basada en la obra de J.R.R. Tolkien."
+    },
+    {
+      "question": "¿Quién dirigió 'Pulp Fiction'?",
+      "options": ["Martin Scorsese", "Quentin Tarantino", "Coen Brothers", "David Lynch"],
+      "correct": 1,
+      "hint": "Conocido por diálogos ingeniosos y violencia estilizada."
+    },
+    {
+      "question": "¿En qué película aparece el personaje de Ellen Ripley?",
+      "options": ["Terminator", "Alien", "Predator", "The Thing"],
+      "correct": 1,
+      "hint": "Interpretada por Sigourney Weaver."
+    },
+    {
+      "question": "¿Cuál es el nombre del villano principal en 'El Caballero Oscuro'?",
+      "options": ["Bane", "El Joker", "Dos Caras", "El Espantapájaros"],
+      "correct": 1,
+      "hint": "Interpretado por Heath Ledger."
+    },
+    {
+      "question": "¿Quién canta 'Bohemian Rhapsody'?",
+      "options": ["The Beatles", "Queen", "Led Zeppelin", "Pink Floyd"],
+      "correct": 1,
+      "hint": "Freddie Mercury era el vocalista."
+    },
+    {
+      "question": "¿En qué serie aparecen los Stark, Lannister y Targaryen?",
+      "options": ["The Witcher", "Game of Thrones", "Vikings", "The Last Kingdom"],
+      "correct": 1,
+      "hint": "Basada en las novelas de George R.R. Martin."
+    },
+    {
+      "question": "¿Quién dirigió 'El resplandor'?",
+      "options": ["Alfred Hitchcock", "Stanley Kubrick", "Roman Polanski", "John Carpenter"],
+      "correct": 1,
+      "hint": "Basada en la novela de Stephen King."
+    },
+    {
+      "question": "¿Cuál es la película de animación de Pixar sobre un chef rata?",
+      "options": ["Up", "Ratatouille", "Finding Nemo", "Toy Story"],
+      "correct": 1,
+      "hint": "Remy sueña con ser chef en París."
+    },
+    {
+      "question": "¿Quién interpreta a Neo en 'Matrix'?",
+      "options": ["Keanu Reeves", "Laurence Fishburne", "Hugo Weaving", "Carrie-Anne Moss"],
+      "correct": 0,
+      "hint": "También conocido por John Wick."
+    },
+    {
+      "question": "¿En qué película se dice la frase 'I'll be back'?",
+      "options": ["Predator", "Terminator", "Aliens", "Total Recall"],
+      "correct": 1,
+      "hint": "Dicha por Arnold Schwarzenegger."
+    },
+    {
+      "question": "¿Cuál es el nombre del planeta natal de Superman?",
+      "options": ["Krypton", "Asgard", "Namek", "Vulcano"],
+      "correct": 0,
+      "hint": "Fue destruido."
+    },
+    {
+      "question": "¿Quién dirigió 'La lista de Schindler'?",
+      "options": ["Steven Spielberg", "Martin Scorsese", "Oliver Stone", "Francis Ford Coppola"],
+      "correct": 0,
+      "hint": "Película sobre el Holocausto."
+    },
+    {
+      "question": "¿En qué película aparece el personaje de Darth Vader?",
+      "options": ["Star Trek", "Star Wars", "Blade Runner", "Dune"],
+      "correct": 1,
+      "hint": "Anakin Skywalker."
+    },
+    {
+      "question": "¿Quién es el creador de Mickey Mouse?",
+      "options": ["Walt Disney", "Ub Iwerks", "Ambos A y B", "Chuck Jones"],
+      "correct": 2,
+      "hint": "Disney y su colaborador Iwerks."
+    },
+    {
+      "question": "¿Cuál es la serie de Netflix sobre un grupo de niños y poderes sobrenaturales en los 80?",
+      "options": ["Dark", "Stranger Things", "The Umbrella Academy", "Locke & Key"],
+      "correct": 1,
+      "hint": "Ambientada en Hawkins, Indiana."
+    },
+    {
+      "question": "¿Quién interpreta a Jack Dawson en Titanic?",
+      "options": ["Leonardo DiCaprio", "Brad Pitt", "Matt Damon", "Johnny Depp"],
+      "correct": 0,
+      "hint": "Junto a Kate Winslet."
+    }
+  ]
+}
